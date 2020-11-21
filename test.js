@@ -2,7 +2,7 @@ import test from 'ava';
 import autoBindReact from './react';
 import autoBind from '.';
 
-test('autoBind()', t => {
+test('autoBind()', async t => {
 	let bounded;
 
 	class Unicorn {
@@ -15,6 +15,12 @@ test('autoBind()', t => {
 			return `${this.name} is awesome!`;
 		}
 
+		async asynCall() {
+			return new Promise(resolve => {
+				resolve(`async - ${this.name} is awesome!`);
+			});
+		}
+
 		get bad() {
 			throw new Error('This getter somehow throws an error!');
 		}
@@ -23,8 +29,9 @@ test('autoBind()', t => {
 	const unicorn = new Unicorn('Rainbow');
 	t.is(bounded, unicorn);
 
-	const {message} = unicorn;
+	const {message, asynCall} = unicorn;
 	t.is(message(), 'Rainbow is awesome!');
+	t.is(await asynCall(), 'async - Rainbow is awesome!');
 });
 
 test('include option', t => {

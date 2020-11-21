@@ -7,7 +7,7 @@ It also correctly binds inherited properties.
 ## Install
 
 ```
-$ npm install auto-bind
+$ npm install auto-class-methods-binder
 ```
 
 ## Usage

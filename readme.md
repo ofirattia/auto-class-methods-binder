@@ -75,7 +75,7 @@ Bind methods except for the given methods.
 Same as `autoBind`, but excludes the default [React component methods](https://reactjs.org/docs/react-component.html).
 
 ```js
-const autoBindReact = require('auto-bind/react');
+const autoBindReact = require('auto-class-methods-binder/react');
 
 class Foo extends React.Component {
 	constructor(props) {

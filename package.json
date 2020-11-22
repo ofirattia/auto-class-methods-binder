@@ -1,6 +1,6 @@
 {
 	"name": "auto-class-methods-binder",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Automatically bind methods to their class instance",
 	"license": "MIT",
 	"repository": "ofirattia/auto-class-methods-binder",
